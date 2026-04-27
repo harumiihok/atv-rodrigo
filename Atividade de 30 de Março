@@ -1,0 +1,76 @@
+Desafio 1
+fun main(args: Array<String>) {
+    println("Ola, Mundo!")
+    println("Bem-vindo ao Kotlin!")
+}
+
+Desafio 2
+fun main(args: Array<String>) {
+    print("Informe seu nome: ")
+    val nome = readLine()!!
+
+    print("Informe sua idade: ")
+    val idade = readLine()!!.toInt()
+
+    println("Ola, $nome! Voce tem $idade anos.")
+}
+
+Desafio 3
+fun main(args: Array<String>) {
+    print("Informe sua idade: ")
+    val idade = readLine()!!.toInt()
+
+    if (idade >= 0 && idade <= 12) {
+        println("Voce e uma crianca.")
+    } else if (idade >= 13 && idade <= 18) {
+        println("Voce e um adolescente.")
+    } else if (idade > 18) {
+        println("Voce e um adulto.")
+    } else {
+        println("Idade invalida.")
+    }
+}
+
+Desafio 4
+fun classificarIdade(idade: Int): String {
+    return if (idade >= 0 && idade <= 12) {
+        "Voce e uma crianca."
+    } else if (idade >= 13 && idade <= 18) {
+        "Voce e um adolescente."
+    } else {
+        "Voce e um adulto."
+    }
+}
+
+fun main() {
+    print("Informe sua idade: ")
+    val entrada = readLine()!!.toInt()
+
+    // Chama a função passando a idade e guarda o retorno na variável 'resultado'
+    val resultado = classificarIdade(entrada)
+
+    // Mostra o resultado guardado
+    println(resultado)
+}
+
+Desafio 5
+fun recomendarFilmes(idade: Int): String {
+    // O return when devolve diretamente o resultado do intervalo correspondente
+    return when (idade) {
+        in 0..12 -> "Recomendamos filmes infantis."
+        in 13..18 -> "Recomendamos filmes adolescentes."
+        else -> "Recomendamos filmes para adultos."
+    }
+}
+
+fun main() {
+    print("Informe sua idade: ")
+    // Lê a entrada do STDIN e converte para Inteiro
+    val idadeInput = readLine()!!.toInt()
+
+    // Chame a função e guarde o retorno
+    val recomendacao = recomendarFilmes(idadeInput)
+
+    // Mostra o resultado
+    println(recomendacao)
+}
